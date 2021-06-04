@@ -38,7 +38,7 @@ public class CustomerMain {
 
 		System.out.println("The Restaurant Menu ");
 		for (int i = 0; i < arraylist.size(); i++) {
-			System.out.println(i + " " + arraylist.get(i));
+			System.out.println(i+1 + " " + arraylist.get(i));
 		}
 
 		ArrayList<RestaurantItems> arraylist1 = new ArrayList<RestaurantItems>();
@@ -50,10 +50,10 @@ public class CustomerMain {
 			System.out.println("Enter item number to order the items");
 			int ItemNo = sc.nextInt();
 
-			Object obj = arraylist.get(ItemNo);
+			Object obj = arraylist.get(ItemNo-1);
 			boolean rs1 = arraylist1.add((RestaurantItems) obj);
 			if (rs1) {
-				System.out.println("Item :" + arraylist.get(ItemNo) + " added successfully");
+				System.out.println("Item :" + arraylist.get(ItemNo-1) + " added successfully");
 			} else {
 				System.out.println("Failed to add items");
 			}
@@ -65,7 +65,7 @@ public class CustomerMain {
 
 		System.out.println("The Ordered Items are");
 		for (int i = 0; i < arraylist1.size(); i++) {
-			System.out.println(i + " " + arraylist1.get(i));
+			System.out.println(i+1 + " " + arraylist1.get(i));
 		}
 		
 		System.out.println("------------------------------------------------------------------------");
@@ -79,10 +79,12 @@ public class CustomerMain {
 		
 		System.out.println("The Ordered Items are");
 		for (int i = 0; i < arraylist1.size(); i++) {
-			System.out.println(i + " " + arraylist1.get(i));
+			System.out.println(i+1 + " " + arraylist1.get(i));
 		}
 		
-		System.out.println("Total amount to pay is: "+totalPrice);
+		//arraylist.forEach((e)->{System.out.println(e);});
+		
+		System.out.println("Total amount to pay is: "+totalPrice+"₹");
 
 	}
 
